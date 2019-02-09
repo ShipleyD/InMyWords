@@ -1,4 +1,18 @@
 <resources>
-    <string name="app_name">InMyWords</string>
+    <string name="app_name">In My Words</string>
     <string name="sign_out">Sign Out</string>
+    <string name="style">Style</string>
+    <string name="account">Account</string>
+    <string name="viewAllWords">View Words</string>
+    <string name="account_picture">Account Picture</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="search">Search</string>
+    <string name="add">Add New Word</string>
+    <string name="favourites">Favourites</string>
+    <string name="record">Record</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="playBack">Play Back</string>
+    <string name="next">Next</string>
+    <string name="favourite">Favourite</string>
+    <string name="save">Save</string>
 </resources>

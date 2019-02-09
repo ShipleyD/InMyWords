@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColourPrimary"
-    tools:context=".HomeActivity">
-
+    tools:context=".AccountActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -18,27 +17,40 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="670dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        tools:layout_editor_absoluteX="8dp">
 
-        <Button
-            android:id="@+id/btnSearch"
+        <TextView
+            android:id="@+id/displayName"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/search"
+            android:padding="8dp"
+            android:text="Blank User"
             android:textSize="24sp" />
 
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colourPrimary"
+            android:padding="8dp"
+            android:text="Email@emal.co.uk"
+            android:textSize="18sp" />
+
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnSignOut"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
@@ -46,22 +58,20 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/add"
+            android:text="@string/sign_out"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btnFavourites"
+            android:id="@+id/btnDeleteAccount"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colourPrimary"
-            android:text="@string/favourites"
+            android:background="#ff0000"
+            android:text="@string/delete_account"
             android:textSize="24sp" />
 
     </LinearLayout>
-
-
 </android.support.constraint.ConstraintLayout>

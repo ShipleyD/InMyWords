@@ -59,18 +59,6 @@ public class SignInActivity extends AppCompatActivity  implements
 
     private void updateUI(@Nullable GoogleSignInAccount account) {
        if (account != null){
-//            GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-//            if (acct != null) {
-//                String personName = acct.getDisplayName();
-//                String personGivenName = acct.getGivenName();
-//                String personFamilyName = acct.getFamilyName();
-//                String personEmail = acct.getEmail();
-//                String personId = acct.getId();
-//                Uri personPhoto = acct.getPhotoUrl();
-//
-//                TextView email = findViewById(R.id.txtemail);
-//                email.setText(personEmail);
-//            }
             startActivity(new Intent(SignInActivity.this, HomeActivity.class));
             finish();
         }

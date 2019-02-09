@@ -4,12 +4,65 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_symbol"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_symbol"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".CorrectWordActivity"
+            android:parentActivityName=".AddWordActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.AddWordActivity" />
+        </activity>
+        <activity
+            android:name=".SearchResultsActivity"
+            android:parentActivityName=".SearchActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.SearchActivity" />
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:parentActivityName=".HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".AddWordActivity"
+            android:parentActivityName=".HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".FavouritesActivity"
+            android:parentActivityName=".HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".AccountActivity"
+            android:parentActivityName=".HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.HomeActivity" />
+        </activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

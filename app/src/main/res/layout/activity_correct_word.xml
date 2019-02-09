@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColourPrimary"
-    tools:context=".HomeActivity">
-
+    tools:context=".CorrectWordActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -18,15 +17,16 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="670dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        tools:layout_editor_absoluteX="8dp">
 
         <Button
-            android:id="@+id/btnSearch"
+            android:id="@+id/btnRecord"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
@@ -34,34 +34,46 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/search"
+            android:text="@string/record"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnPlayBack"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/add"
+            android:text="@string/playBack"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:hint="New Word"
+            android:inputType="textAutoComplete"
+            android:padding="8dp"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btnFavourites"
+            android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/favourites"
+            android:text="@string/save"
             android:textSize="24sp" />
 
     </LinearLayout>
-
-
 </android.support.constraint.ConstraintLayout>
