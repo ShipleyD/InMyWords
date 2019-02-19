@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class HomeActivity extends AppCompatActivity  implements
         View.OnClickListener{
 
@@ -37,6 +39,8 @@ public class HomeActivity extends AppCompatActivity  implements
         btnSearch.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
         btnFavourites.setOnClickListener(this);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     }
 
