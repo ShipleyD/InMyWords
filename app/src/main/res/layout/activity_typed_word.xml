@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColourPrimary"
-    tools:context=".View.SearchActivity">
+    tools:context=".View.TypedWordActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -16,7 +16,6 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,45 +36,43 @@
             android:text="@string/record"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/orText"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/backgroundColourPrimary"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="OR"
-            android:textColor="#ffffff"
-            android:textSize="36sp" />
-
-        <EditText
-            android:id="@+id/searchWord"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:hint="Enter Search Word"
-            android:inputType="textAutoComplete"
-            android:padding="8dp"
-            android:textSize="24sp" />
-
         <Button
-            android:id="@+id/btnSearch"
+            android:id="@+id/btnPlayBack"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:text="@string/search"
+            android:text="@string/playBack"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/etxtTypeWord"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:hint="@string/enter_new_word"
+            android:inputType="textAutoComplete"
+            android:padding="8dp"
+            android:textSize="24sp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colourPrimary"
+            android:text="@string/save"
             android:textSize="24sp" />
 
     </LinearLayout>

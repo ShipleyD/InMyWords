@@ -10,9 +10,15 @@
     <string name="add">Add New Word</string>
     <string name="favourites">Favourites</string>
     <string name="record">Record</string>
+    <string name="recording">Recording</string>
+    <string name="stop_recording">Stop Recording</string>
     <string name="suggestion">Suggestion</string>
     <string name="playBack">Play Back</string>
     <string name="next">Next</string>
     <string name="favourite">Favourite</string>
     <string name="save">Save</string>
+    <string name="enter_new_word">Enter New Word</string>
+    <string name="word_saved">Word Successfully Saved</string>
+    <string name="word_not_saved">Failed to save word</string>
+    <string name="delete_word">Delete Word</string>
 </resources>

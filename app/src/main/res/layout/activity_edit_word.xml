@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColourPrimary"
-    tools:context=".CorrectWordActivity">
+    tools:context=".View.EditWordActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -25,54 +25,31 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         tools:layout_editor_absoluteX="8dp">
 
-        <Button
-            android:id="@+id/btnRecord"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colourPrimary"
-            android:text="@string/record"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/btnPlayBack"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colourPrimary"
-            android:text="@string/playBack"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/editText"
+        <TextView
+            android:id="@+id/selectedWord"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:hint="New Word"
-            android:inputType="textAutoComplete"
+            android:background="@color/colourPrimary"
             android:padding="8dp"
-            android:textSize="24sp" />
+            android:gravity="center"
+            android:text="Selected Word"
+            android:textSize="36sp" />
+
+
 
         <Button
-            android:id="@+id/btnNext"
+            android:id="@+id/btnDeleteWord"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colourPrimary"
-            android:text="@string/save"
+            android:background="@color/colourHighlight"
+            android:text="@string/delete_word"
             android:textSize="24sp" />
 
     </LinearLayout>

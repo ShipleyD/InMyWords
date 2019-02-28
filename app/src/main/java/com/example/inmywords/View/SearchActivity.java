@@ -1,4 +1,4 @@
-package com.example.inmywords;
+package com.example.inmywords.View;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -7,11 +7,19 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.inmywords.R;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+//todo - fix not finding words if they contain different capitalisation
 public class SearchActivity extends AppCompatActivity implements
         View.OnClickListener{
 
+    private EditText searchWord;
     private Button btnSearch;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +36,15 @@ public class SearchActivity extends AppCompatActivity implements
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
 
+        //set on click listener for the search button
         btnSearch= findViewById(R.id.btnSearch);
-
         btnSearch.setOnClickListener(this);
+
+        //get instance of db
+        db = FirebaseFirestore.getInstance();
+
+        searchWord = findViewById(R.id.searchWord);
+
     }
 
     @Override
@@ -44,6 +58,13 @@ public class SearchActivity extends AppCompatActivity implements
     }
 
         private void search(){
-            startActivity(new Intent(SearchActivity.this, SearchResultsActivity.class));
+
+        String searchterm = searchWord.getText().toString();
+
+
+        Intent intent = new Intent(SearchActivity.this, SearchResultsActivity.class);
+        intent.putExtra("searchTerm", searchterm);
+        startActivity(intent);
+
         }
 }

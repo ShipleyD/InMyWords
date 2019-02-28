@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.inmywords">
+
+    <uses-sdk tools:overrideLibrary="com.firebase.ui.auth" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -9,61 +16,71 @@
         android:roundIcon="@drawable/logo_symbol"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CorrectWordActivity"
-            android:parentActivityName=".AddWordActivity">
+        <activity android:name=".View.EditWordActivity"></activity>
+        <activity
+            android:name=".View.AllWordsActivity"
+            android:parentActivityName=".View.HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.AddWordActivity" />
+                android:value="com.example.inmywords.View.HomeActivity" />
         </activity>
         <activity
-            android:name=".SearchResultsActivity"
-            android:parentActivityName=".SearchActivity">
+            android:name=".View.TypedWordActivity"
+            android:parentActivityName=".View.AddWordActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.SearchActivity" />
+                android:value="com.example.inmywords.View.AddWordActivity" />
         </activity>
         <activity
-            android:name=".SearchActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".View.SearchResultsActivity"
+            android:parentActivityName=".View.SearchActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.HomeActivity" />
+                android:value="com.example.inmywords.View.SearchActivity" />
         </activity>
         <activity
-            android:name=".AddWordActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".View.SearchActivity"
+            android:parentActivityName=".View.HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.HomeActivity" />
+                android:value="com.example.inmywords.View.HomeActivity" />
         </activity>
         <activity
-            android:name=".FavouritesActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".View.AddWordActivity"
+            android:parentActivityName=".View.HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.HomeActivity" />
+                android:value="com.example.inmywords.View.HomeActivity" />
         </activity>
         <activity
-            android:name=".AccountActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".View.FavouritesActivity"
+            android:parentActivityName=".View.HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.inmywords.HomeActivity" />
+                android:value="com.example.inmywords.View.HomeActivity" />
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SignInActivity">
+        <activity
+            android:name=".View.AccountActivity"
+            android:parentActivityName=".View.HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.inmywords.View.HomeActivity" />
+        </activity> <!-- <activity android:name=".HomeActivity" /> -->
+        <activity android:name=".View.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
