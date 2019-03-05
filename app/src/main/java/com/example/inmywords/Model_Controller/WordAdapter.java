@@ -1,10 +1,11 @@
 package com.example.inmywords.Model_Controller;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.inmywords.R;
@@ -46,9 +47,21 @@ public class WordAdapter extends FirestoreRecyclerAdapter<Word, WordAdapter.Word
             itemView.findViewById(R.id.btnPlay).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    String pressedBtn = "play";
                     int position = getAdapterPosition();
                     if(position != RecyclerView.NO_POSITION && listener != null){
-                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position, pressedBtn);
+                    }
+                }
+            });
+
+            itemView.findViewById(R.id.btnEdit).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String pressedBtn = "edit";
+                    int position = getAdapterPosition();
+                    if(position != RecyclerView.NO_POSITION && listener != null){
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position, pressedBtn);
                     }
                 }
             });
@@ -56,7 +69,7 @@ public class WordAdapter extends FirestoreRecyclerAdapter<Word, WordAdapter.Word
     }
 
     public interface OnItemClickListener {
-        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+        void onItemClick(DocumentSnapshot documentSnapshot, int position, String pressedBtn);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener){

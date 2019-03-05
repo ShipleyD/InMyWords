@@ -21,4 +21,5 @@
     <string name="word_saved">Word Successfully Saved</string>
     <string name="word_not_saved">Failed to save word</string>
     <string name="delete_word">Delete Word</string>
+    <string name="logout">User must log in again</string>
 </resources>

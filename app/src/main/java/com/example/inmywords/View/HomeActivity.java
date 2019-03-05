@@ -1,10 +1,10 @@
 package com.example.inmywords.View;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Menu;
@@ -65,7 +65,8 @@ public class HomeActivity extends AppCompatActivity  implements
         // Enable Firestore logging
         FirebaseFirestore.setLoggingEnabled(true);
 
-        initFirestore();
+        // Access a Cloud Firestore instance from your Activity
+        db = FirebaseFirestore.getInstance();
 
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         if (fUser != null) {
@@ -161,13 +162,6 @@ public class HomeActivity extends AppCompatActivity  implements
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
-    }
-
-
-    private void initFirestore() {
-
-        // Access a Cloud Firestore instance from your Activity
-        db = FirebaseFirestore.getInstance();
     }
 
     @Override

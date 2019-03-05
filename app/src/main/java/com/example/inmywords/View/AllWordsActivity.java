@@ -1,12 +1,13 @@
 package com.example.inmywords.View;
 
+import android.content.Intent;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.inmywords.Model_Controller.Word;
 import com.example.inmywords.Model_Controller.WordAdapter;
@@ -58,12 +59,27 @@ public class AllWordsActivity extends AppCompatActivity {
 
         adapter.setOnItemClickListener(new WordAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+            public void onItemClick(DocumentSnapshot documentSnapshot, int position, String pressedBtn) {
+
                 Word mWord = documentSnapshot.toObject(Word.class);
-                String toSpeak = mWord.getWord();
-                if(toSpeak != null) {
-                    tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                String button = pressedBtn;
+                if(button == "play") {
+                    String toSpeak = mWord.getWord();
+                    if (toSpeak != null) {
+                        tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                }else if (button == "edit"){
+                    String path = documentSnapshot.getReference().getPath();
+                    Intent intent = new Intent(AllWordsActivity.this, EditWordActivity.class);
+                    intent.putExtra("path", path);
+                    startActivity(intent);
                 }
+                //Todo delete comments
+//                Word mWord = documentSnapshot.toObject(Word.class);
+//                String toSpeak = mWord.getWord();
+//                if(toSpeak != null) {
+//                    tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+//                }
             }
         });
     }
