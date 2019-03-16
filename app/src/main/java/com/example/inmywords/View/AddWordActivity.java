@@ -26,12 +26,12 @@ import java.io.IOException;
 public class AddWordActivity extends AppCompatActivity implements
         View.OnClickListener {
 
-    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0;
     private Button btnNext;
     private Button btnRecord;
     private Button btnPlayBack;
     private FirebaseFirestore db;
     private String filePath;
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0;
     int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 0;
     WavRecorder wavRecorder;
 
@@ -60,7 +60,7 @@ public class AddWordActivity extends AppCompatActivity implements
         btnPlayBack.setOnClickListener(this);
 
         AudioFileUtil fileUtil = new AudioFileUtil();
-        filePath = (fileUtil.getRouteStorageDir("recWords")).getAbsolutePath();
+        filePath = (fileUtil.getRouteStorageDir("recWords1")).getAbsolutePath();
         wavRecorder = new WavRecorder(filePath);
 
         // Access a Cloud Firestore instance from your Activity

@@ -102,7 +102,7 @@ public class TypedWordActivity extends AppCompatActivity implements
                     playWord();
                 }
                 break;
-            // ...
+            // ... todo might not need
             case R.id.btnRecord:
                 startRecording();
                 break;

@@ -20,6 +20,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import com.musicg.fingerprint.FingerprintSimilarity;
+import com.musicg.wave.Wave;
+
 import java.util.Locale;
 
 public class SearchResultsActivity extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class SearchResultsActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
     private String searchTerm;
+    private String filePath;
     private CollectionReference wordListRef;
     private TextToSpeech tts;
 
@@ -39,6 +43,7 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         searchTerm = bundle.getString("searchTerm");
+        filePath = bundle.getString("filePath");
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -86,21 +91,26 @@ public class SearchResultsActivity extends AppCompatActivity {
 
     private void setUpRecyclerView() {
 
+        if(searchTerm != "") {
+            email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+            wordListRef = db.collection("users").document(email).collection("Words");
+            Query query = wordListRef.whereEqualTo("Word", searchTerm).orderBy("Word", Query.Direction.ASCENDING);
 
-        email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        wordListRef = db.collection("users").document(email).collection("Words");
-        Query query = wordListRef.whereEqualTo("Word", searchTerm).orderBy("Word", Query.Direction.ASCENDING);
+            FirestoreRecyclerOptions<Word> options = new FirestoreRecyclerOptions.Builder<Word>()
+                    .setQuery(query, Word.class)
+                    .build();
 
-        FirestoreRecyclerOptions<Word> options = new FirestoreRecyclerOptions.Builder<Word>()
-                .setQuery(query, Word.class)
-                .build();
+            adapter = new WordAdapter(options);
 
-        adapter = new WordAdapter(options);
+            RecyclerView recyclerView = findViewById(R.id.recycler_view);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
+        } else if (filePath != "" && filePath != null){
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+
+
+        }
     }
 
     @Override
