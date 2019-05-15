@@ -27,6 +27,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+//todo delete class
+
 public class SignInActivity extends AppCompatActivity  implements
         View.OnClickListener{
 

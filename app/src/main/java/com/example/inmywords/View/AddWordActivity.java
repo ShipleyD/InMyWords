@@ -23,6 +23,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.io.File;
 import java.io.IOException;
 
+
+
 public class AddWordActivity extends AppCompatActivity implements
         View.OnClickListener {
 
@@ -60,7 +62,7 @@ public class AddWordActivity extends AppCompatActivity implements
         btnPlayBack.setOnClickListener(this);
 
         AudioFileUtil fileUtil = new AudioFileUtil();
-        filePath = (fileUtil.getRouteStorageDir("recWords1")).getAbsolutePath();
+        filePath = (fileUtil.getRouteStorageDir("recWord")).getAbsolutePath();
         wavRecorder = new WavRecorder(filePath);
 
         // Access a Cloud Firestore instance from your Activity

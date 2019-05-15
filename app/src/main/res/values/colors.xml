@@ -5,6 +5,6 @@
     <color name="backgroundColourPrimary">#006494</color>
     <color name="ColourSecondary">#247BA0</color>
     <color name="colourLight">#E8F1F2</color>
-    <color name="colourText">#E8F1F2</color>
+    <color name="colourText">#FFFFFF</color>
     <color name="colourHighlight">#FF0000</color>
 </resources>

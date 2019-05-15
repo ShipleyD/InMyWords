@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import com.example.inmywords.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firestore.v1beta1.WriteResult;
 
 public class EditWordActivity extends AppCompatActivity implements
         View.OnClickListener {
@@ -37,7 +39,9 @@ public class EditWordActivity extends AppCompatActivity implements
     private CollectionReference wordListRef;
     private TextToSpeech tts;
     private TextView selectedWord;
-    private Button deleteWordButton;
+    private TextView txtEditTitle;
+    private Button btnDeleteWord;
+    private Button btnUpdateWord;
     private String word;
     private FirebaseStorage storage;
     private boolean fileDelete;
@@ -52,6 +56,7 @@ public class EditWordActivity extends AppCompatActivity implements
         path = bundle.getString("path");
 
         selectedWord = findViewById(R.id.selectedWord);
+        txtEditTitle = findViewById(R.id.txtEditTitle);
         getData();
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
@@ -63,8 +68,10 @@ public class EditWordActivity extends AppCompatActivity implements
 
         storage = FirebaseStorage.getInstance();
 
-        deleteWordButton = findViewById(R.id.btnDeleteWord);
-        deleteWordButton.setOnClickListener(this);
+        btnDeleteWord = findViewById(R.id.btnDeleteWord);
+        btnDeleteWord.setOnClickListener(this);
+        btnUpdateWord = findViewById(R.id.btnUpdateWord);
+        btnUpdateWord.setOnClickListener(this);
     }
 
     public void getData(){
@@ -99,9 +106,16 @@ public class EditWordActivity extends AppCompatActivity implements
             case R.id.btnDeleteWord:
                 deleteWord();
                 break;
+            case R.id.btnUpdateWord:
+                updateWord();
+                break;
 
     }
 }
+
+    private void updateWord() {
+//todo implement update word
+    }
 
     private void deleteWord() {
 

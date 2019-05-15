@@ -63,12 +63,12 @@ public class AllWordsActivity extends AppCompatActivity {
 
                 Word mWord = documentSnapshot.toObject(Word.class);
                 String button = pressedBtn;
-                if(button == "play") {
+                if(button.equals("play")) {
                     String toSpeak = mWord.getWord();
                     if (toSpeak != null) {
                         tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     }
-                }else if (button == "edit"){
+                }else if (button.equals("edit")){
                     String path = documentSnapshot.getReference().getPath();
                     Intent intent = new Intent(AllWordsActivity.this, EditWordActivity.class);
                     intent.putExtra("path", path);

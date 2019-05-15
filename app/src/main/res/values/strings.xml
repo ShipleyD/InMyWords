@@ -3,7 +3,7 @@
     <string name="sign_out">Sign Out</string>
     <string name="style">Style</string>
     <string name="account">Account</string>
-    <string name="viewAllWords">View Words</string>
+    <string name="viewAllWords">All Words</string>
     <string name="account_picture">Account Picture</string>
     <string name="delete_account">Delete Account</string>
     <string name="search">Search</string>
@@ -22,4 +22,5 @@
     <string name="word_not_saved">Failed to save word</string>
     <string name="delete_word">Delete Word</string>
     <string name="logout">User must log in again</string>
+    <string name="update">Update</string>
 </resources>

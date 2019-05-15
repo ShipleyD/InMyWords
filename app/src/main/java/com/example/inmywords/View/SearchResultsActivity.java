@@ -106,7 +106,7 @@ public class SearchResultsActivity extends AppCompatActivity {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(adapter);
-        } else if (filePath != "" && filePath != null){
+        } else {
 
 
 

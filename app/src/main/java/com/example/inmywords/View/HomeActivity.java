@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity  implements
     private static final String TAG = "HomeActivity";
     private Button btnHSearch;
     private Button btnAdd;
-    private Button btnFavourites;
+    private Button btnAllWords;
     private FirebaseFirestore db;
     private static final int RC_SIGN_IN = 9001;
     private FirebaseUser fUser;
@@ -55,12 +55,12 @@ public class HomeActivity extends AppCompatActivity  implements
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         btnHSearch = findViewById(R.id.btnHSearch);
-        btnAdd= findViewById(R.id.btnAdd);
-        btnFavourites= findViewById(R.id.btnFavourites);
+        btnAdd = findViewById(R.id.btnAdd);
+        btnAllWords = findViewById(R.id.btnAllWords);
 
         btnHSearch.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
-        btnFavourites.setOnClickListener(this);
+        btnAllWords.setOnClickListener(this);
 
         // Enable Firestore logging
         FirebaseFirestore.setLoggingEnabled(true);
@@ -69,9 +69,7 @@ public class HomeActivity extends AppCompatActivity  implements
         db = FirebaseFirestore.getInstance();
 
         fUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (fUser != null) {
-            // User is signed in
-        } else {
+        if (fUser == null) {
             // No user is signed in
             createSignInIntent();
         }
@@ -92,7 +90,7 @@ public class HomeActivity extends AppCompatActivity  implements
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
-                        .setLogo(R.drawable.in_my_words_logo_white)      // Set logo drawable
+                        .setLogo(R.drawable.in_my_words_logo_white)
                         .setTheme(R.style.AppTheme)
                         .build(),
                 RC_SIGN_IN);
@@ -127,14 +125,6 @@ public class HomeActivity extends AppCompatActivity  implements
                     }
                 });
 
-
-
-                // ...
-            } else {
-                // Sign in failed. If response is null the user canceled the
-                // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
             }
         }
     }
@@ -177,10 +167,6 @@ public class HomeActivity extends AppCompatActivity  implements
                 startActivity(new Intent(HomeActivity.this, AccountActivity.class));
                 return true;
 
-            case R.id.viewAllWords:
-                startActivity(new Intent(HomeActivity.this, AllWordsActivity.class));
-                return true;
-
             case R.id.style:
                 return true;
 
@@ -201,14 +187,14 @@ public class HomeActivity extends AppCompatActivity  implements
                 add();
                 break;
             // ...
-            case R.id.btnFavourites:
-                favourites();
+            case R.id.btnAllWords:
+                allWords();
                 break;
         }
     }
 
-    private void favourites() {
-        startActivity(new Intent(HomeActivity.this, FavouritesActivity.class));
+    private void allWords() {
+        startActivity(new Intent(HomeActivity.this, AllWordsActivity.class));
     }
 
     private void add() {

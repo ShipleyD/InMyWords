@@ -17,6 +17,8 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+//todo delete class
+
 public class SignInActivityBU extends AppCompatActivity  implements
         View.OnClickListener{
 

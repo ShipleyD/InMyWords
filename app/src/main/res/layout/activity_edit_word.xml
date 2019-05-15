@@ -15,7 +15,8 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
     <LinearLayout
@@ -32,18 +33,49 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/colourPrimary"
-            android:padding="8dp"
             android:gravity="center"
+            android:padding="8dp"
             android:text=""
+            android:textColor="@color/colourText"
             android:textSize="36sp" />
 
 
+        <TextView
+            android:id="@+id/txtEditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colourPrimary"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text=""
+            android:textColor="@color/colourText"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/btnUpdateWord"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colourPrimary"
+            android:text="@string/update"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btnDeleteWord"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_margin="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"

@@ -6,10 +6,6 @@
         android:title="@string/account"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/viewAllWords"
-        android:title="@string/viewAllWords"
-        app:showAsAction="never"/>
-
     <item android:id="@+id/style"
         android:title="@string/style"
         app:showAsAction="never"/>
